@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" prefHeight="688.0" prefWidth="1052.0" style="-fx-background-color: #D5FFD0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel_management_system.controller.LoginFormController">
+   <children>
+      <Label layoutX="599.0" layoutY="79.0" text="The D24 Hostel">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="625.0" layoutY="288.0" text="User Name">
+         <font>
+            <Font name="Webdings" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="625.0" layoutY="410.0" text="Password">
+         <font>
+            <Font name="Webdings" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="user_name_txt" layoutX="625.0" layoutY="329.0" onAction="#user_name_txtOnAction" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #91C8E4; -fx-border-color: #749BC2; -fx-background-radius: 10; -fx-border-width: 3; -fx-border-radius: 10;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="password_txt" layoutX="625.0" layoutY="471.0" onAction="#password_txtOnAction" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #91C8E4; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 3; -fx-border-color: #749BC2;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="549.0" fitWidth="612.0" layoutX="26.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/hostel_img.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="599.0" layoutY="171.0" text="for Colombo University Students">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="36.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="login_btn" layoutX="760.0" layoutY="552.0" onAction="#login_btnOnAction" style="-fx-background-color: Yellow; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: red;" text="Login">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
