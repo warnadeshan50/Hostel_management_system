@@ -8,5 +8,5 @@ import java.sql.SQLException;
 public interface RoomBO extends SuperBO{
     public boolean isSaveRoom(RoomDTO dto) throws SQLException;
     public boolean isUpdateRoom(RoomDTO dto) throws SQLException;
-    public boolean isDeleteRoom(String id) throws SQLException;
+    public boolean isDeleteRoom(RoomDTO room) throws SQLException;
 }

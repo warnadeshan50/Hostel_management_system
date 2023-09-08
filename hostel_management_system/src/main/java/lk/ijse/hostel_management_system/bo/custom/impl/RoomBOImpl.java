@@ -21,7 +21,7 @@ public class RoomBOImpl implements RoomBO {
     }
 
     @Override
-    public boolean isDeleteRoom(String id) throws SQLException {
-        return roomDAO.isDelete(id);
+    public boolean isDeleteRoom(RoomDTO dto) throws SQLException {
+        return roomDAO.isDelete(new Room(dto.getRoom_type_id(),dto.getRoom_type(), dto.getKey_money(), dto.getRoom_qty()));
     }
 }

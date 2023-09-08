@@ -1,0 +1,21 @@
+.jfx-combo-box{
+    -fx-background-radius:5 5 5 5;
+    -fx-font-size: 18;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-color: #FF3FA4;
+    -fx-border-width: 3;
+}
+.jfx-text-field{
+    -fx-background-radius:5 5 5 5;
+    -fx-font-size: 18;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-color: #A6FF96;
+    -fx-border-width: 3;
+}
+.jfx-button{
+    -fx-background-radius:5 5 5 5;
+    -fx-font-size: 18;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-color: #BC7AF9;
+    -fx-border-width: 3;
+}

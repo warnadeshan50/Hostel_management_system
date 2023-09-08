@@ -22,7 +22,16 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public boolean isDeleteUser(String id) throws SQLException {
-        return UserDAO.isDelete(id);
+    public boolean isDeleteUser(UserDTO dto) throws SQLException {
+        return UserDAO.isDelete(new User(dto.getUsername(), dto.getPassword()));
+    }
+
+    @Override
+    public UserDTO searchUser(String id) throws SQLException {
+        User user=UserDAO.search(id);
+        if(user!=null) {
+            return new UserDTO(user.getUsername(), user.getPassword());
+        }
+        return null;
     }
 }

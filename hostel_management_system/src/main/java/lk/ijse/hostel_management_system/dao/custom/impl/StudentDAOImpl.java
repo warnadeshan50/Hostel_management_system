@@ -2,12 +2,15 @@ package lk.ijse.hostel_management_system.dao.custom.impl;
 
 import lk.ijse.hostel_management_system.dao.FactoryConfiguration;
 import lk.ijse.hostel_management_system.dao.custom.StudentDAO;
+import lk.ijse.hostel_management_system.entity.Room;
 import lk.ijse.hostel_management_system.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudentDAOImpl implements StudentDAO {
     @Override
@@ -31,10 +34,10 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public boolean isDelete(String id) throws SQLException {
+    public boolean isDelete(Student student) throws SQLException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(id);
+        session.delete(student);
         transaction.commit();
         session.close();
         return true;
@@ -51,7 +54,14 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public ArrayList<Student> getAll() throws SQLException {
-        return null;
+    public List<Student> getAll() throws SQLException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery query = session.createNativeQuery("select * from Student");
+        query.addEntity(Student.class);
+        List<Student>students= query.list();
+        transaction.commit();
+        session.close();
+        return students;
     }
 }

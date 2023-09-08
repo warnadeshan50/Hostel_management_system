@@ -33,10 +33,10 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public boolean isDelete(String id) throws SQLException {
+    public boolean isDelete(Room room) throws SQLException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(id);
+        session.delete(room);
         transaction.commit();
         session.close();
         return true;
@@ -53,15 +53,12 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public ArrayList<Room> getAll() throws SQLException {
+    public List<Room> getAll() throws SQLException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        ArrayList<Room> data = new ArrayList<>();
-        List<Room>rooms=session.createQuery("SELECT a FROM Room a",Room.class).getResultList();
-        data= (ArrayList<Room>) rooms;
         transaction.commit();
         session.close();
-        return data;
+        return null;
 
     }
 }
