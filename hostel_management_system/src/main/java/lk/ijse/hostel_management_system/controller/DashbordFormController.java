@@ -48,8 +48,11 @@ public class DashbordFormController {
     }
 
     @FXML
-    void rooms_btnOnAction(ActionEvent event) {
-
+    void rooms_btnOnAction(ActionEvent event) throws IOException {
+        Scene stage=new Scene(FXMLLoader.load(getClass().getResource("/view/rooms_form.fxml")));
+        Stage window=(Stage) logout_btn.getScene().getWindow();
+        window.setScene(stage);
+        window.centerOnScreen();
     }
 
     @FXML
